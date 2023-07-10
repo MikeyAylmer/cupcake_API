@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha256-/ykJw/wDxMa0AQhHDYfuMEwVb4JHMx9h4jD4XvHqVzU=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Cupcake Page</title>
+</head>
+
+<body>
+    <h1>Cupcake List</h1>
+    <ul id="cupcakes-list">
+        {% for cupcake in cupcakes %}
+        <li>{{cupcake.flavor}}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <h3>Add New Cupcake</h3>
+    <form id="new-cupcake-form">
+
+        <div>
+            <label for="cupcake-flavor">Flavor: </label>
+            <input name="flavor" id="cupcake-flavor" placeholder="Cupcake Flavor">
+        </div>
+
+        <div>
+            <label for="cupcake-size">Size:</label>
+            <input name="size" id="cupcake-size" placeholder="Cupcake Size">
+        </div>
+
+        <div>
+            <label for="cupcake-rating">Rating:</label>
+            <input name="rating" id="cupcake-rating" placeholder="Cupcake Rating">
+        </div>
+
+        <div>
+            <label for="cupcake-image">Image:</label>
+            <input name="image" id="cupcake-image" placeholder="Cupcake Image">
+        </div>
+        <button>Add Cupcake</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="static/cupcakes.js"></script>
+</body>
+
+</html>
